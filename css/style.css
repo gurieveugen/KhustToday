@@ -1,0 +1,658 @@
+/*
+    ____            __      
+   / __/___  ____  / /______
+  / /_/ __ \/ __ \/ __/ ___/
+ / __/ /_/ / / / / /_(__  ) 
+/_/  \____/_/ /_/\__/____/  */
+                            
+@font-face {
+    font-family: 'clear_sans_mediumregular';
+    src: url('../fonts/clearsans-medium-webfont.eot');
+    src: url('../fonts/clearsans-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-medium-webfont.woff2') format('woff2'),
+         url('../fonts/clearsans-medium-webfont.woff') format('woff'),
+         url('../fonts/clearsans-medium-webfont.ttf') format('truetype'),
+         url('../fonts/clearsans-medium-webfont.svg#clear_sans_mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sans_lightregular';
+    src: url('../fonts/clearsans-light-webfont.eot');
+    src: url('../fonts/clearsans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-light-webfont.woff2') format('woff2'),
+         url('../fonts/clearsans-light-webfont.woff') format('woff'),
+         url('../fonts/clearsans-light-webfont.ttf') format('truetype'),
+         url('../fonts/clearsans-light-webfont.svg#clear_sans_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sansbold_italic';
+    src: url('../fonts/clearsans-bolditalic-webfont.eot');
+    src: url('../fonts/clearsans-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/clearsans-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/clearsans-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/clearsans-bolditalic-webfont.svg#clear_sansbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sansregular';
+    src: url('../fonts/clearsans-regular-webfont.eot');
+    src: url('../fonts/clearsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/clearsans-regular-webfont.woff') format('woff'),
+         url('../fonts/clearsans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/clearsans-regular-webfont.svg#clear_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sansitalic';
+    src: url('../fonts/clearsans-italic-webfont.eot');
+    src: url('../fonts/clearsans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-italic-webfont.woff2') format('woff2'),
+         url('../fonts/clearsans-italic-webfont.woff') format('woff'),
+         url('../fonts/clearsans-italic-webfont.ttf') format('truetype'),
+         url('../fonts/clearsans-italic-webfont.svg#clear_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sans_thinregular';
+    src: url('../fonts/clearsans-thin-webfont.eot');
+    src: url('../fonts/clearsans-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-thin-webfont.woff2') format('woff2'),
+         url('../fonts/clearsans-thin-webfont.woff') format('woff'),
+         url('../fonts/clearsans-thin-webfont.ttf') format('truetype'),
+         url('../fonts/clearsans-thin-webfont.svg#clear_sans_thinregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sans_mediumitalic';
+    src: url('../fonts/clearsans-mediumitalic-webfont.eot');
+    src: url('../fonts/clearsans-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-mediumitalic-webfont.woff2') format('woff2'),
+         url('../fonts/clearsans-mediumitalic-webfont.woff') format('woff'),
+         url('../fonts/clearsans-mediumitalic-webfont.ttf') format('truetype'),
+         url('../fonts/clearsans-mediumitalic-webfont.svg#clear_sans_mediumitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sansbold';
+    src: url('../fonts/clearsans-bold-webfont.eot');
+    src: url('../fonts/clearsans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-bold-webfont.woff2') format('woff2'),
+         url('../fonts/clearsans-bold-webfont.woff') format('woff'),
+         url('../fonts/clearsans-bold-webfont.ttf') format('truetype'),
+         url('../fonts/clearsans-bold-webfont.svg#clear_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	background: #dddddd;
+	font-family: 'clear_sans_lightregular';
+}
+
+.main{
+	width: 1044px;
+	margin: 0 auto;
+	background: #fff;
+	overflow: hidden;
+}
+
+.right{
+	float: right;
+}
+
+.margin-top-60{
+	margin-top: 60px;
+}
+
+.margin-top-45{
+	margin-top: 45px;
+} 
+
+.margin-bottom-60{
+	margin-bottom: 60px;
+}
+
+.text-center{
+	text-align: center;
+}
+
+/*
+    __                   __         
+   / /_  ___  ____ _____/ /__  _____
+  / __ \/ _ \/ __ `/ __  / _ \/ ___/
+ / / / /  __/ /_/ / /_/ /  __/ /    
+/_/ /_/\___/\__,_/\__,_/\___/_/     */
+
+.main header.main-header{
+	width: 940px;
+	margin: 0 auto;
+}
+
+.main header.main-header .banner{
+	text-align: center;
+	margin: 48px 0 0 0;
+}
+
+.main header.main-header ul.menu{
+	margin: 0 0 160px 0;
+	padding: 0;
+}
+
+.main header.main-header ul.menu li{
+	display: inline-block;
+}
+
+.main header.main-header ul.menu li a{
+	display: block;
+	font-size: 16px;
+	text-decoration: underline;
+	color: #000;
+	text-transform: uppercase;
+	margin: 0 50px 0 0;
+}
+
+.main header.main-header ul.menu li a.logo{
+	position: relative;
+}
+
+.main header.main-header ul.menu li a.logo img{
+	position: relative;
+	top: 65px;
+}
+
+.main header.main-header ul.menu li a.search{
+	width: 30px;
+	position: relative;
+}
+
+.main header.main-header ul.menu li a.search img{
+	position: relative;
+	top: 13px;
+}
+/*
+                    __             __ 
+  _________  ____  / /____  ____  / /_
+ / ___/ __ \/ __ \/ __/ _ \/ __ \/ __/
+/ /__/ /_/ / / / / /_/  __/ / / / /_  
+\___/\____/_/ /_/\__/\___/_/ /_/\__/  */
+
+.main section.main-section figure figcaption,
+.main section.main-section .content .half,
+.main section.main-section .sidebar .poll button,
+.main section.main-section .content{
+	box-sizing: border-box;
+}
+
+.main section.main-section{
+	width: 940px;
+	margin: 0 auto;
+}
+
+.main section.main-section h1{
+	color: #e30613;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin: 0 0 26px 0;
+}
+
+.main section.main-section figure{
+	position: relative;
+}
+
+.main section.main-section figure figcaption{
+	position: absolute;
+	display: block;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	color: #fff;
+	opacity: 0.9;
+	padding: 13px;
+	font: 14px 'clear_sansregular';
+}
+
+.main section.main-section .content{
+	width: 620px;
+	float: left;
+}
+
+.main section.main-section .content h1.page-title{
+	margin: 30px 0 20px 0;
+}
+
+.main section.main-section .content span.date{
+	font: 12px 'clear_sansbold';
+	color: #bebebe;
+	line-height: 20px;
+	margin: 0 0 10px;
+	display: block;
+}
+
+.main section.main-section .content .text{
+	white-space: pre-line;
+	color: #bebebe;
+}
+
+.main section.main-section .content .short-news{
+	border-bottom: 1px solid #BEBEBE;
+	display: block;
+	float: left;
+	margin: 0 0 10px;
+	padding: 0 0 10px;
+	width: 100%;
+}
+
+.main section.main-section .content .short-news a{
+	color: #222222;
+	padding: 0 0 5px 0;
+	text-decoration: none;
+	display: block;	
+}
+
+.main section.main-section .content .short-news .img-block{
+	display: block;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.main section.main-section .content .short-news .text-block .text{
+	font-size: 13px;
+}
+
+.main section.main-section .content ul.pagination{
+	width: 100%;
+	float: left;
+	display: block;
+	text-align: center;
+	list-style: none;
+	margin: 15px 0 30px 0;
+}
+
+.main section.main-section .content ul.pagination li{
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.main section.main-section .content ul.pagination li a{
+	color: #b1b1b1;
+	padding: 5px 10px;
+	text-decoration: none;
+}
+
+.main section.main-section .content ul.pagination li a:hover{
+	text-decoration: none;
+	background: #b1b1b1;
+	color: #ffffff;
+}
+
+.main section.main-section .content ul.pagination li a.active{
+	background: #b1b1b1;
+	color: #ffffff;
+}
+
+.main section.main-section .content .half{
+	width: 300px;
+	float: left;
+}
+
+.main section.main-section .content .half.right{
+	margin-left: 20px;
+}
+
+.main section.main-section .content .half h1.rezonans-title{
+	margin: 60px 0 26px 0;
+}
+
+.main section.main-section .content .half .txt{
+	font: 15px 'clear_sansregular';
+	color: #2b2b2b;
+	margin: 10px 0 0 0;
+}
+
+.main section.main-section .content .half .flexslider{
+	width: 270px;
+}
+
+.main section.main-section .content .half ul.rezonans-list{
+	margin: 0;
+	padding: 0;
+	border-right: 1px solid #bebebe;
+}
+
+.main section.main-section .content .half ul.rezonans-list li{
+	display: block;
+	position: relative;
+	margin: 0 0 37px 0;
+}
+
+.main section.main-section .content .half ul.rezonans-list li span.comments{
+	font: 10px 'clear_sansregular';
+	color: #9b9b9b;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.main section.main-section .content .half ul.rezonans-list li span.comments:before{
+	content: url(../images/comments_icon.png);
+	position: relative;
+	top: 4px;
+	margin: 0 3px 0 0;
+}
+
+
+.main section.main-section .content .half ul.rezonans-list li a{
+	margin: 0 0 0 60px;
+	display: block;
+	font: 13px 'clear_sansregular';
+	color: #000;
+	line-height: 20px;
+}
+
+.main section.main-section .content .half ul.sidebar-tools{
+	width: 270px;
+	position: relative;
+}
+
+.main section.main-section .content .half ul.sidebar-tools li{
+	display: inline-block;
+	font-size: 14px;
+}
+
+.main section.main-section .content .half ul.sidebar-tools li.last{
+	float: right;
+}
+
+.main section.main-section .content .half ul.sidebar-tools li a{
+	color: #e30613;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.main section.main-section .content .half ul.sidebar-tools li span{
+	color: #bebebe;
+}
+
+.main section.main-section .content .half ul.news-list{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.main section.main-section .content .half ul.news-list li{
+	display: block;
+    line-height: 20px;
+    margin: 20px 0 40px;
+}
+
+.main section.main-section .content .half ul.news-list li span{
+	font: 11px 'clear_sansbold';
+	display: block;
+	color: #bebebe;
+}
+
+.main section.main-section .content .half ul.news-list li a{
+	font: 13px 'clear_sansregular';
+	color: #000;
+	text-decoration: underline;
+}
+
+.main section.main-section .content .half article{
+	float: left;
+	margin: 26px 0 0 0;
+}
+
+.main section.main-section .content .half article.first{
+	margin: 0;
+}
+
+.main section.main-section .content .half article img{
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.main section.main-section .content .half article a{
+	font: 14px 'clear_sansregular';
+	color: #2b2b2b;
+	line-height: 14px;
+}
+
+.main section.main-section .content .half article ul.info{
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-family: 'clear_sansregular';
+	font-size: 11px;
+	color: #9b9b9b;
+	margin: 15px 0 0 0;
+}
+
+.main section.main-section .content .half article ul.info li{
+	position: relative;
+	display: inline-block;
+	margin: 0 7px 0 0;
+}
+
+.main section.main-section .content .half article ul.info li.comments:before{
+	content: url(../images/comments_icon.png);
+	position: relative;
+	top: 4px;
+	margin: 0 3px 0 0;
+}
+
+.main section.main-section .content .half article ul.info li.comments{
+	font-size: 10px;
+}
+
+.main section.main-section .sidebar{
+	width: 300px;
+	float: right;
+}
+
+.main section.main-section .sidebar .banner-auto{
+	float: right;
+}
+
+.main section.main-section .sidebar .banner-kinoafisha{
+	float: right;
+	margin: 57px 0 0 0;
+}
+
+.main section.main-section .sidebar .sinoptiok-block{
+	display: block;
+	width: 100%;
+	float: left;
+}
+
+.main section.main-section .sidebar .poll{
+	margin: 41px 0 0 0;
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.main section.main-section .sidebar .poll a{
+	font-family: 'clear_sansregular';
+	font-size: 14px;
+	color: #737373;
+}
+
+.main section.main-section .sidebar .poll span.poll-info{
+	font-size: 13px;
+	color: #000;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.main section.main-section .sidebar .poll span.title{
+	font-size: 18px;
+	color: #000;
+	width: 100%;
+	display: block;
+	margin: 0 0 37px 0;
+}
+
+.main section.main-section .sidebar .poll button{
+	height: 34px;
+	line-height: 34px;
+	border: none;
+	background: #e40000;
+	color: #fff;
+	text-transform: uppercase;
+	font: 14px 'clear_sansregular';
+	padding: 0 29px;
+}
+
+.main section.main-section .sidebar .block-tabs{
+	box-sizing: border-box;
+	float: left;
+	margin: 60px 0;
+	padding: 0;
+	width: 300px;
+}
+
+.main section.main-section .sidebar .block-tabs .tabs,
+.main section.main-section .sidebar .block-tabs .links{
+	float: left;
+}
+
+.main section.main-section .sidebar .block-tabs .links{
+	width: 100%;
+	position: relative;
+	top: 1px;
+}
+
+.main section.main-section .sidebar .block-tabs .links li {
+    display: block;
+    float: left;
+}
+
+.main section.main-section .sidebar .block-tabs .links li a {    
+    box-sizing: border-box;
+    color: #1d73b3;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    margin: 0 14px 11px 0;
+}
+
+.main section.main-section .sidebar .block-tabs .links li a.fb{
+	font-size: 0;
+	background: url('../images/fb.png');
+	width: 38px;
+	height: 37px;
+}
+
+.main section.main-section .sidebar .block-tabs .links li a.fb.active,
+.main section.main-section .sidebar .block-tabs .links li a.fb:hover{
+	background: url('../images/fb_hover.png');
+}
+
+.main section.main-section .sidebar .block-tabs .links li a.vk{
+	font-size: 0;
+	background: url('../images/vk.png');
+	width: 38px;
+	height: 37px;
+}
+
+.main section.main-section .sidebar .block-tabs .links li a.vk.active,
+.main section.main-section .sidebar .block-tabs .links li a.vk:hover{
+	background: url('../images/vk_hover.png');
+}
+
+.main section.main-section .sidebar .block-tabs .tabs {
+    box-sizing: border-box;
+    width: 300px;
+}
+
+.main section.main-section .sidebar .block-tabs .tabs li {
+    box-sizing: border-box;
+    display: none;
+    float: left;
+}
+
+.main section.main-section .sidebar .block-tabs .tabs li.show {
+    display: block;
+}
+.main section.main-section .sidebar .block-tabs .tabs li {
+    text-align: center;
+}
+
+.main section.main-section .sidebar .poll .bottom{
+	margin: 7px 0 0 0;
+}
+
+.main section.main-section .sidebar .poll .picker .picker-label{
+	width: 255px;
+	color: #5e5e5e;
+}
+
+.main section.main-section .picker.picker-radio .picker-handle{
+	border-radius: 50%;
+	border: 1px solid #e40000;
+	margin: 0 13px 0 0;
+}
+
+.main section.main-section .picker.picker-radio.checked .picker-flag{
+	margin: 4px;
+	background: #e40000;
+}
+
+/*
+    ____            __           
+   / __/___  ____  / /____  _____
+  / /_/ __ \/ __ \/ __/ _ \/ ___/
+ / __/ /_/ / /_/ / /_/  __/ /    
+/_/  \____/\____/\__/\___/_/     */
+
+.main footer.main-footer{
+	border-top: 1px solid #bebebe;
+	float: left;
+	margin: 90px 0 0 0;
+}
+
+.main footer.main-footer .content{
+	width: 940px;
+	margin: 0 auto;
+	padding: 52px 41px;
+}
+
+.main footer.main-footer .content .logo{
+	display: block;
+	float: left;
+}
+
+.main footer.main-footer .content ul.menu{
+	margin: 20px 0 0 0;
+	padding: 0;
+}  
+
+.main footer.main-footer .content ul.menu li{
+	display: inline-block;
+}   
+
+.main footer.main-footer .content ul.menu li a{
+	font-size: 12px;
+	display: block;
+	text-transform: uppercase;
+	text-decoration: underline;
+	color: #000;
+	margin: 0 0 0 40px;
+}                                 
+
+
+
